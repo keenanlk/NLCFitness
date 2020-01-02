@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/previous-workouts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>workout-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <h1 color="primary">Exercises</h1>
+    <ion-card color="danger" *ngFor="let workout of workoutList">
+      <ion-card-title color="white">
+        {{workout?.name}}
+      </ion-card-title>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h2>Sets: {{workout?.sets}}</h2>
+              <h2>Reps: {{workout?.reps}}</h2>
+            </ion-col>
+            <ion-col text-center>
+              <h1>{{workout?.weight}} lbs</h1>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

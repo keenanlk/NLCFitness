@@ -1,14 +1,61 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-text color="primary">
+    <h1 padding-start>Dashboard</h1>
+  </ion-text>
+  <ion-card class="workout">
+    <ion-card-header>
+      <ion-card-title color="primary">Workouts</ion-card-title>
+    </ion-card-header>
+    <ion-card-content no-padding>
+      <ion-item lines="none">
+        <ion-button size="full" color="danger" (click)="viewWorkouts()"
+          >Previous Workouts</ion-button
+        >
+      </ion-item>
+      <ion-item lines="none"
+        ><ion-icon
+          padding
+          slot="end"
+          name="add"
+          color="primary"
+          (click)="addWorkout()"
+        ></ion-icon>
+        <h1>
+          New Workout
+        </h1>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="danger">
+    <ion-card-header>
+      <ion-card-title>Weight</ion-card-title>
+    </ion-card-header>
+    <ion-card-content color="danger" no-padding>
+      <ion-item lines="none" color="danger">
+        <ion-button size="full" color="dark" (click)="weightList()"
+          >Weight History</ion-button
+        >
+      </ion-item>
+      <ion-item lines="none" color="danger" (click)="addWeight()"
+        ><ion-icon padding slot="end" name="add" color="primary"></ion-icon>
+        <h1>
+          Update Current Weight
+        </h1>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

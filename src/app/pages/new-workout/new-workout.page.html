@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon
+        size="large"
+        name="checkmark"
+        slot="start"
+        (click)="submit()"
+      ></ion-icon>
+    </ion-buttons>
+    <ion-title>new-workout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content padding>
+    <ion-card *ngFor="let ex of exerciseList" color="danger">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col><p>Name: {{ex.name}}</p></ion-col>
+            <ion-col><p>Weight: {{ex.weight}}lbs</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><p>Sets: {{ex.sets}}</p></ion-col>
+            <ion-col><p>Reps: {{ex.reps}}</p></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="addEx()">Add Exercise</ion-button>
+  </ion-content>
+</ion-content>

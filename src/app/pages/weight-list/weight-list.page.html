@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Weight History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header><ion-label>Weights</ion-label></ion-list-header>
+    <ion-item *ngFor="let weights of weightList">
+      <ion-label>
+        <h2>Weight {{weights?.weight}}</h2>
+        <p color="white">
+          Date: <strong>{{weights?.date.toDate() | date: 'MM/dd/yyyy'}}</strong>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

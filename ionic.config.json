@@ -1,5 +1,7 @@
 {
   "name": "NLCFitness",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

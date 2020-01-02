@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding margin-bottom>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img margin-left src="../assets/nlc.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form [formGroup]="loginForm" margin-top>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        type="email"
+        placeholder="Your email address"
+        [class.invalid]="!loginForm.controls['email'].valid &&
+      loginForm.controls['email'].touched"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item
+      class="error-message"
+      *ngIf="!loginForm.controls['email'].valid &&
+       loginForm.controls['email'].touched"
+    >
+      <ion-label>Please enter a valid email address.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+        placeholder="Your password"
+        [class.invalid]="!loginForm.controls['password'].valid&& loginForm.controls['password'].touched"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item
+      class="error-message"
+      *ngIf="!loginForm.controls['password'].valid
+      && loginForm.controls['password'].touched"
+    >
+      <ion-label>Your password needs more than 6 characters.</ion-label>
+    </ion-item>
+
+    <ion-button
+      padding
+      (click)="loginUser(loginForm)"
+      expand="full"
+      [disabled]="!loginForm.valid"
+      color="danger"
+    >
+      Log In
+    </ion-button>
+  </form>
+
+  <ion-button expand="block" fill="clear" routerLink="/signup">
+    Create a new account
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" routerLink="/reset-password">
+    I forgot my password :(
+  </ion-button>
+</ion-content>
