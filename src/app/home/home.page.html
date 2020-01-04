@@ -3,6 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="m1"></ion-menu-button>
     </ion-buttons>
+    <ion-title>
+      <ion-img class="logo" height="10" src="assets/nlc.png"></ion-img>
+    </ion-title>
 
     <ion-buttons slot="end">
       <ion-button routerLink="/profile">
@@ -14,7 +17,7 @@
 
 <ion-content padding>
   <ion-text color="primary">
-    <h1 padding-start>Dashboard</h1>
+    <h1 padding-start>{{userProfile?.firstName}}'s Dashboard</h1>
   </ion-text>
   <ion-card class="workout">
     <ion-card-header>
@@ -45,17 +48,36 @@
       <ion-card-title>Weight</ion-card-title>
     </ion-card-header>
     <ion-card-content color="danger" no-padding>
-      <ion-item lines="none" color="danger">
-        <ion-button size="full" color="dark" (click)="weightList()"
-          >Weight History</ion-button
-        >
-      </ion-item>
-      <ion-item lines="none" color="danger" (click)="addWeight()"
-        ><ion-icon padding slot="end" name="add" color="primary"></ion-icon>
-        <h1>
-          Update Current Weight
-        </h1>
-      </ion-item>
+      <ion-grid padding-leftg>
+        <ion-row>
+          <ion-col>
+            <ion-text class="curWeight">{{userProfile?.curWeight}} </ion-text>
+            <ion-text>lbs</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-item lines="none" color="danger" (click)="addWeight()"
+              ><ion-icon
+                padding
+                slot="start"
+                name="add"
+                color="primary"
+              ></ion-icon>
+              <h1>
+                Update
+              </h1>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" color="danger">
+              <ion-button size="full" color="dark" (click)="weightList()"
+                >Weight History</ion-button
+              >
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

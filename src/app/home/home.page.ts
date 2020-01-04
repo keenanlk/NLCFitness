@@ -15,14 +15,30 @@ export class HomePage implements OnInit {
   workoutName: string;
   weight: Observable<number>;
   docId: string;
+  public userProfile: any;
+
   constructor(
     private router: Router,
     private alertCtrol: AlertController,
-    private workoutService: WorkoutService
+    private workoutService: WorkoutService,
+    private profileService: ProfileService
   ) {}
 
   ngOnInit() {
     console.log(this.router.url);
+  }
+
+  ionViewDidEnter() {
+    this.getUser();
+  }
+
+  getUser() {
+    this.profileService
+      .getUserProfile()
+      .get()
+      .then(data => {
+        this.userProfile = data.data();
+      });
   }
 
   addWeight() {

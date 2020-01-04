@@ -33,3 +33,13 @@ ion-input {
     border-bottom: 0 !important;
   }
 }
+
+ion-content {
+  background: rgb(24, 24, 24);
+  background: linear-gradient(
+    338deg,
+    rgba(24, 24, 24, 1) 0%,
+    rgba(69, 69, 69, 1) 49%,
+    rgba(83, 83, 83, 1) 100%
+  );
+}

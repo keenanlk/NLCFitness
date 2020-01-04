@@ -4,6 +4,9 @@ import { LoadingController, AlertController } from "@ionic/angular";
 import { AuthService } from "../../services/user/auth.service";
 import { Router } from "@angular/router";
 import { async } from "@angular/core/testing";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
 @Component({
   selector: "app-login",
@@ -59,4 +62,14 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  ionViewWillEnter() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.router.navigateByUrl("home");
+      }
+    });
+  }
+
+  ionViewDidLoad() {}
 }
