@@ -5,6 +5,11 @@ import { RouteReuseStrategy } from "@angular/router";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { FileChooser } from "@ionic-native/file-chooser/ngx";
+import { File } from "@ionic-native/file/ngx";
+import { IonicStorageModule } from "@ionic/storage";
+import { Camera } from "@ionic-native/camera/ngx";
+import { WebView } from "@ionic-native/ionic-webview/ngx";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -23,11 +28,16 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    FileChooser,
+    File,
+    WebView,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

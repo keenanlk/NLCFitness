@@ -1,5 +1,11 @@
 .workout {
-  border: 1px solid var(--ion-color-danger);
+  border: 2px solid var(--ion-color-danger);
+  margin: 0 !important;
+  height: 85px;
+  width: 100%;
+  align-content: center;
+  vertical-align: middle;
+  align-items: center !important;
 }
 
 ion-icon {
@@ -12,4 +18,50 @@ ion-icon {
 
 .logo {
   height: 30px;
+}
+.card1 {
+  margin: 0 !important;
+  height: 180px;
+  width: 100%;
+  align-content: center;
+  vertical-align: middle;
+  align-items: center !important;
+}
+.card {
+  //flex-direction: column;
+  margin: 0 !important;
+  height: 85px;
+  width: 100%;
+  align-content: center;
+  vertical-align: middle;
+  align-items: center !important;
+}
+
+.ion-card-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ion-row {
+  align-items: center !important;
+}
+
+.noshadow {
+  --box-shadow: none;
+}
+
+ion-button {
+  --box-shadow: none;
+}
+
+ion-text {
+  color: white;
+}
+
+.space {
+  padding-bottom: 10px;
+}
+.new {
+  padding-bottom: 50px;
 }

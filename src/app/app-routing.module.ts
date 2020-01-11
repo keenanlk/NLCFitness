@@ -52,7 +52,15 @@ const routes: Routes = [
     loadChildren:
       "./pages/workout-details/workout-details.module#WorkoutDetailsPageModule",
     canActivate: [AuthGuard]
+  },  {
+    path: 'photos',
+    loadChildren: () => import('./pages/photos/photos.module').then( m => m.PhotosPageModule)
+  },
+  {
+    path: 'photo-upload',
+    loadChildren: () => import('./pages/photo-upload/photo-upload.module').then( m => m.PhotoUploadPageModule)
   }
+
 ];
 
 @NgModule({
