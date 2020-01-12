@@ -38,19 +38,19 @@ export class NewWorkoutPage implements OnInit {
       inputs: [
         {
           name: "name",
-          placeholder: "Squat"
+          placeholder: "Name"
         },
         {
           name: "reps",
-          placeholder: "8"
+          placeholder: "Reps"
         },
         {
           name: "sets",
-          placeholder: "3"
+          placeholder: "Sets"
         },
         {
           name: "weight",
-          placeholder: "225"
+          placeholder: "Weight"
         }
       ],
       buttons: [

@@ -39,6 +39,7 @@ export class ProfilePage implements OnInit {
   async updateName(): Promise<void> {
     const alert = await this.alertCtrl.create({
       subHeader: "Your first name & last name",
+      cssClass: "customAlert",
       inputs: [
         {
           type: "text",
