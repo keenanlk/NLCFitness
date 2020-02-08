@@ -18,7 +18,7 @@ export class AddWeightPage implements OnInit {
       return;
     }
     this.weightService.addWeight(curWeight, new Date()).then(() => {
-      this.router.navigateByUrl("home");
+      this.router.navigateByUrl("tabs/weight-list");
     });
   }
 }

@@ -3,6 +3,7 @@ import { WeightService } from "../../services/weight.service";
 import { ProfileService } from "src/app/services/user/profile.service";
 import { LoadingController } from "@ionic/angular";
 import { Chart } from "chart.js";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-weight-list",
@@ -20,16 +21,23 @@ export class WeightListPage implements OnInit {
   dateEnd: string;
   dateMiddle: string;
   dateStart: string;
+  curWeight: number;
 
   constructor(
     private weightService: WeightService,
     private profileService: ProfileService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private router: Router
   ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     this.loadData();
   }
+
+  onViewDidEnter() {}
+
   async loadData() {
     this.loading = await this.loadingCtrl.create({
       spinner: "bubbles"
@@ -47,6 +55,7 @@ export class WeightListPage implements OnInit {
             weight: snap.data().weight,
             date: snap.data().date
           });
+
           this.end = this.weightList.length - 1;
           this.middle = Math.floor(this.weightList.length / 2);
           this.weightList.sort(function(a, b) {
@@ -56,6 +65,7 @@ export class WeightListPage implements OnInit {
         });
         this.getChart();
         this.loading.dismiss();
+        this.curWeight = this.weightList[0].weight;
       });
   }
 
@@ -118,5 +128,10 @@ export class WeightListPage implements OnInit {
       .padStart(2, "0");
 
     return month + "/" + day + "/" + year;
+  }
+
+  addWeight() {
+    this.router.navigateByUrl("/tabs/weight-list/add-weight");
+    this.loadData();
   }
 }

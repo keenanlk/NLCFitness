@@ -8,7 +8,7 @@
     </ion-title>
 
     <ion-buttons slot="end">
-      <ion-button routerLink="/profile">
+      <ion-button routerLink="/tabs/home/profile">
         <ion-icon slot="icon-only" name="person"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -42,9 +42,9 @@
     </ion-row>
     <ion-row padding-end padding-start padding-bottom>
       <ion-col>
-        <ion-card class="workout">
-          <ion-card-content text-center padding-bottom="15px" padding-top>
-            <ion-item lines="none" class="new"
+        <ion-card class="workout1">
+          <ion-card-content text-center class="ion-card-content">
+            <ion-item lines="none"
               ><ion-icon
                 slot="end"
                 name="add"
@@ -84,11 +84,9 @@
               no-padding
               class="ion-card-content"
             >
-              <ion-item lines="none" color="danger">
-                <ion-button color="dark" (click)="weightList()"
-                  >Weight History</ion-button
-                >
-              </ion-item>
+              <ion-button color="danger" (click)="weightList()"
+                >Weight History</ion-button
+              >
             </ion-card-content>
           </ion-card>
         </ion-row>

@@ -66,7 +66,7 @@ export class LoginPage implements OnInit {
   ionViewWillEnter() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.router.navigateByUrl("home");
+        this.router.navigateByUrl("tabs/home");
       }
     });
   }

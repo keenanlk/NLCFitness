@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
-import { ProfileService } from "../services/user/profile.service";
+import { ProfileService } from "../../services/user/profile.service";
 import { Observable } from "rxjs";
 import { AlertController } from "@ionic/angular";
-import { WorkoutService } from "../services/workout.service";
+import { WorkoutService } from "../../services/workout.service";
 
 @Component({
   selector: "app-home",
@@ -42,10 +42,10 @@ export class HomePage implements OnInit {
   }
 
   addWeight() {
-    this.router.navigateByUrl("add-weight");
+    this.router.navigateByUrl("tabs/weight-list/add-weight");
   }
   weightList() {
-    this.router.navigateByUrl("weight-list");
+    this.router.navigateByUrl("tabs/weight-list");
   }
   async addWorkout() {
     const alert = await this.alertCtrol.create({
@@ -80,6 +80,6 @@ export class HomePage implements OnInit {
   }
 
   viewWorkouts() {
-    this.router.navigateByUrl("previous-workouts");
+    this.router.navigateByUrl("tabs/previous-workouts");
   }
 }

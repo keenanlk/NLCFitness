@@ -1,3 +1,25 @@
 p {
   color: white;
 }
+
+h1 {
+  padding-top: 0em;
+  font-size: 60px;
+  color: var(--ion-color-danger);
+}
+
+.lbs {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+ion-row {
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
+ion-icon {
+  font-size: 110px;
+  text-align: center;
+}

@@ -50,7 +50,7 @@ export class WorkoutService {
     return (this.workoutListRef = this.workoutListRef);
   }
 
-  newWorkout(wName: string) {
+  newWorkout(wName: string): string {
     this.workoutListRef
       .add({
         date: new Date(),
@@ -59,7 +59,7 @@ export class WorkoutService {
       .then(docRef => {
         //console.log(docRef.id);
         this.docId = docRef.id;
-        this.router.navigate(["/new-workout", this.docId]);
+        return this.docId;
       });
 
     return;

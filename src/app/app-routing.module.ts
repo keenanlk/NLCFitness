@@ -5,19 +5,10 @@ import { AuthGuard } from "./services/user/auth.guard";
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   {
-    path: "home",
-    loadChildren: "./home/home.module#HomePageModule",
-    canActivate: [AuthGuard]
-  },
-  {
     path: "login",
     loadChildren: "./pages/login/login.module#LoginPageModule"
   },
-  {
-    path: "profile",
-    loadChildren: "./pages/profile/profile.module#ProfilePageModule",
-    canActivate: [AuthGuard]
-  },
+
   {
     path: "reset-password",
     loadChildren:
@@ -27,40 +18,13 @@ const routes: Routes = [
     path: "signup",
     loadChildren: "./pages/signup/signup.module#SignupPageModule"
   },
-  {
-    path: "new-workout/:id",
-    loadChildren: "./pages/new-workout/new-workout.module#NewWorkoutPageModule",
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "previous-workouts",
-    loadChildren:
-      "./pages/previous-workouts/previous-workouts.module#PreviousWorkoutsPageModule",
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "add-weight",
-    loadChildren: "./pages/add-weight/add-weight.module#AddWeightPageModule"
-  },
-  {
-    path: "weight-list",
-    loadChildren: "./pages/weight-list/weight-list.module#WeightListPageModule",
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "workout-details/:id",
-    loadChildren:
-      "./pages/workout-details/workout-details.module#WorkoutDetailsPageModule",
-    canActivate: [AuthGuard]
-  },  {
-    path: 'photos',
-    loadChildren: () => import('./pages/photos/photos.module').then( m => m.PhotosPageModule)
-  },
-  {
-    path: 'photo-upload',
-    loadChildren: () => import('./pages/photo-upload/photo-upload.module').then( m => m.PhotoUploadPageModule)
-  }
 
+  {
+    path: "tabs",
+    loadChildren: () =>
+      import("./pages/tabs/tabs.module").then(m => m.TabsPageModule)
+  },
+  { path: "", loadChildren: "./pages/tabs/tabs.module#TabsPageModule" }
 ];
 
 @NgModule({

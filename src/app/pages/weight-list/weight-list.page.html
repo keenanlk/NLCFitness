@@ -1,13 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons>
     <ion-title>Weight History</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid padding>
+    <ion-row>
+      <ion-col text-end><h1 color="danger">{{curWeight}}</h1></ion-col>
+      <ion-col size="2" margin-bottom><p class="lbs">lbs</p></ion-col>
+
+      <ion-col text-center>
+        <ion-icon (click)="addWeight()" name="add"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <div>
     <canvas id="lineChart"></canvas>
   </div>

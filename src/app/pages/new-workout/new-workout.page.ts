@@ -79,6 +79,6 @@ export class NewWorkoutPage implements OnInit {
 
   submit() {
     this.workoutService.addWorkout(this.id, this.exerciseList);
-    this.router.navigateByUrl("home");
+    this.router.navigateByUrl("tabs/previous-workouts");
   }
 }
