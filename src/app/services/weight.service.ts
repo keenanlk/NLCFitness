@@ -51,4 +51,7 @@ export class WeightService {
   getWeightList(): firebase.firestore.CollectionReference {
     return (this.weightListRef = this.weightListRef);
   }
+  deleteWeight(id: string) {
+    this.weightListRef.doc(id).delete();
+  }
 }

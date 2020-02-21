@@ -38,7 +38,7 @@
     "cordova-plugin-filechooser": "^1.2.0",
     "cordova-sqlite-storage": "^4.0.0",
     "core-js": "^2.5.4",
-    "firebase": "^7.6.1",
+    "firebase": "^7.9.0",
     "firebaseui": "^4.4.0",
     "firebaseui-angular": "^4.0.1",
     "rxjs": "~6.5.1",

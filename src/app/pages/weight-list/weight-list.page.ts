@@ -134,4 +134,9 @@ export class WeightListPage implements OnInit {
     this.router.navigateByUrl("/tabs/weight-list/add-weight");
     this.loadData();
   }
+
+  delete(id: string) {
+    this.weightService.deleteWeight(id);
+    this.loadData();
+  }
 }
