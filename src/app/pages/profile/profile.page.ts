@@ -67,7 +67,7 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
-  updateDOB(birthDate: string): void {
+  updateDOB(birthDate: Date): void {
     if (birthDate === undefined) {
       return;
     }

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage";
 import { AuthService } from "../services/user/auth.service";
 
 @Injectable({

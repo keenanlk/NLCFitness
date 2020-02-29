@@ -3,6 +3,7 @@ import { WorkoutService } from "src/app/services/workout.service";
 import { Router } from "@angular/router";
 import { LoadingController, AlertController } from "@ionic/angular";
 import { stringify } from "querystring";
+import { async } from "@angular/core/testing";
 
 @Component({
   selector: "app-previous-workouts",
@@ -22,8 +23,10 @@ export class PreviousWorkoutsPage implements OnInit {
     private alertCtrol: AlertController
   ) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.loadData();
+  }
+  ngOnInit() {
     console.log(this.router.url);
   }
   async loadData() {
@@ -80,10 +83,13 @@ export class PreviousWorkoutsPage implements OnInit {
     });
     await alert.present();
     alert.onDidDismiss().then(data => {
-      this.id = this.workoutService.newWorkout(this.workoutName);
-      this.router.navigateByUrl(
-        `tabs/previous-workouts/new-workout/${this.id}`
-      );
+      this.workoutService.newWorkout(this.workoutName).then(dat => {
+        console.log(dat);
+        this.id = dat;
+        this.router.navigateByUrl(
+          `tabs/previous-workouts/new-workout/${this.id}`
+        );
+      });
     });
   }
 }

@@ -20,18 +20,8 @@
           ></ion-input>
         </ion-item>
       </ion-col>
-      <ion-col>
-        <input
-          type="file"
-          accept="image/*"
-          id="file"
-          (change)="readURL($event);"/><label for="file"
-          ><ion-icon name="image" color="white"></ion-icon></label
-      ></ion-col>
     </ion-row>
-    <ion-row>
-      <ion-img id="blah" [src]="imageSrc"></ion-img>
-    </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-button expand="full" color="danger" (click)="addWeight(curWeight)"

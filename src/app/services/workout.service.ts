@@ -50,18 +50,17 @@ export class WorkoutService {
     return (this.workoutListRef = this.workoutListRef);
   }
 
-  newWorkout(wName: string): string {
-    this.workoutListRef
+  async newWorkout(wName: string): Promise<string> {
+    await this.workoutListRef
       .add({
         date: new Date(),
         name: wName
       })
       .then(docRef => {
-        //console.log(docRef.id);
         this.docId = docRef.id;
-        return this.docId;
+        console.log(this.docId);
       });
 
-    return;
+    return this.docId;
   }
 }

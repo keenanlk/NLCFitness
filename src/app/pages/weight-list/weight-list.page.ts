@@ -137,6 +137,10 @@ export class WeightListPage implements OnInit {
 
   delete(id: string) {
     this.weightService.deleteWeight(id);
+    if (this.weightList[0].id === id) {
+      this.weightService.updateCurrentWeight(this.weightList[1].weight);
+    }
+
     this.loadData();
   }
 }

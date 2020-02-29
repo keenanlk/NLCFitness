@@ -28,7 +28,7 @@ export class HomePage implements OnInit {
     console.log(this.router.url);
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     this.getUser();
   }
 
@@ -75,7 +75,12 @@ export class HomePage implements OnInit {
     });
     await alert.present();
     alert.onDidDismiss().then(data => {
-      this.workoutService.newWorkout(this.workoutName);
+      this.workoutService.newWorkout(this.workoutName).then(dat => {
+        this.docId = dat;
+        this.router.navigateByUrl(
+          `tabs/previous-workouts/new-workout/${this.docId}`
+        );
+      });
     });
   }
 
